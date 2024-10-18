@@ -16,8 +16,132 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown>
+					## <span class="title-display">The .NET Command-Line Interface</span>
+
+					#### <span class="subtitle-display">Your best friend as a .NET Developer.</span>
+
+					Dave Rael
+
+					[https://daverael.com/](https://daverael.com/)
+
+					dave@raelyard.com
+				</section>
+				<section data-markdown>
+					## <span class="title-display">dotnet</span>
+
+					https://github.com/raelyard/dotnet-cli/blob/main/README.md
+
+					![Where Image?](images/qr-readme.png)
+				</section>
+				<section data-markdown data-background-image="images/why.jpg">
+					#### Why dotnet?
+
+					&nbsp;
+
+					&nbsp;
+
+					&nbsp;
+
+					&nbsp;
+
+					&nbsp;
+
+					&nbsp;
+
+					&nbsp;
+
+					Image by [Gerd Altmann](https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2985525) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2985525)
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						### There are Many Reasons to Love Visual Studio, But...
+
+						- It's big and heavy and a resource hog <!-- .element: class="fragment" data-fragment-index="1" -->
+						- It can be slow under many conditions <!-- .element: class="fragment" data-fragment-index="2" -->
+						- Especially with ReSharper and other plugins  <!-- .element: class="fragment" data-fragment-index="3" -->
+						- It suffers from doing too many things <!-- .element: class="fragment" data-fragment-index="4" -->
+						- Windows Only <!-- .element: class="fragment" data-fragment-index="5" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						### Further...
+
+						Even if you like to use Visual Studio on your workstation, ...
+
+						- Consider your pipelines <!-- .element: class="fragment" data-fragment-index="1" -->
+						- Consider your Dockerfiles <!-- .element: class="fragment" data-fragment-index="2" -->
+						- Consider your Mac and Linux user teammates <!-- .element: class="fragment" data-fragment-index="3" -->
+						- Consider Windows Subsystem for Linux <!-- .element: class="fragment" data-fragment-index="3" -->
+						- You might want to script various build, package, run operations for many reasons  <!-- .element: class="fragment" data-fragment-index="4" -->
+						- It's often faster to use dotnet  <!-- .element: class="fragment" data-fragment-index="5" -->
+						- Workloads and tools <!-- .element: class="fragment" data-fragment-index="6" -->
+						- The watch command <!-- .element: class="fragment" data-fragment-index="7" -->
+					</script>
+				</section>
+				<section data-markdown>
+					## Installing dotnet
+
+					Runtime vs SDK
+				</section>
+				<section data-markdown>
+					## Installing dotnet
+
+					- It just comes along when you install the likes of Visual Studio
+					- It comes along with the C# Dev Kit Visual Studio Code extension
+					- Use your package manager
+					- Container images
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						### Executing dotnet
+
+						There are 2 main types of dotnet invocation, both require using the executable that is known as the driver:
+
+						- Execute a .NET application <!-- .element: class="fragment" data-fragment-index="1" -->
+						- Execute a dotnet command <!-- .element: class="fragment" data-fragment-index="2" -->
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						### Executing a .NET Application
+
+						``` shell
+						dotnet TheApplication.dll
+						```
+					</script>
+				</section>
+				<section data-markdown>
+					<script type="text/template">
+						### Executing a dotnet command
+
+						There are 4 parts to a command invocation of the .NET CLI:
+
+						- The driver (the dotnet executable) <!-- .element: class="fragment" data-fragment-index="1" -->
+						- The command <!-- .element: class="fragment" data-fragment-index="2" -->
+						- Arguments <!-- .element: class="fragment" data-fragment-index="3" -->
+						- Options  <!-- .element: class="fragment" data-fragment-index="4" -->
+					</script>
+				</section>
+				<section data-markdown>
+					## Executing a dotnet command
+
+					``` shell
+					dotnet command [arguments] [options]
+					```
+
+					``` shell
+					dotnet build TheConsoleApp --no-incremental
+					```
+				</section>
+				<section data-markdown>
+					## <span class="title-display">dotnet</span>
+
+					https://github.com/raelyard/dotnet-cli/blob/main/README.md
+
+					![Where Image?](images/qr-readme.png)
+				</section>
 			</div>
 		</div>
 
@@ -31,6 +155,13 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				slideNumber: false,
+				controls: false,
+				hash: true,
+				overview: false,
+				defaultTiming: 90,
+				transition: 'convex',
+
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
